@@ -42,10 +42,10 @@ We call the new data frame "observations", and name his columns "subject", "acti
 ### Step 2: extracting measurements on the mean and standard deviation
 We keep only columns with the words "mean" or "std" in their names.
 According to the instructions, from my point of view the columns with "FreqMean" shouldn't be part of the set. This is a debatable point, but in any case is the criteria I've applied. I hence remove the columns containing the word "Freq".
-The result is a data frame with 10299 variables (as before), and 68 variables
+The result is a data frame with 10299 variables (as before), and 67 variables
 
 ### Step 3: descriptive activity names in the data set
-To replace the activity_codes by the activity_labels, we merge "observations_mean_std_notFreq" and "activities", an select the columns we want: the subject, not the activy code, but instead the activity_label, and the 66 other columns containing a mean or a standar deviation, but not a FreqMean.
+To replace the activity_codes by the activity_labels, we merge "observations_mean_std_notFreq" and "activities", an select the columns we want: the subject, not the activy code, but instead the activity_label, and the 67 other columns containing a mean or a standar deviation, but not a FreqMean.
 We get the data frame "observations_activities"
 
 ### Step 4: descriptive variable names
@@ -53,7 +53,7 @@ This has been for me the most difficult decision. The names are long and abbrevi
 
 ### Step 5: average of each variable for activity and subject
 Finally, I just have to  summarise the data to get the means. I used the command aggregate, from the stats library.
-The result is a data frame of 180 observations, corresponding to each combination of subject (30 subjects) and activities (6 activities), that is 30 x 6 = 180, and 68 variables.
+The result is a data frame of 180 observations, corresponding to each combination of subject (30 subjects) and activities (6 activities), that is 30 x 6 = 180, and 69 variables, including the subject and the activity variables.
 
 ### Final step
 We just have to write the data frame created, as "summarised_data.txt", via the command write.table.
