@@ -19,23 +19,23 @@ output: html_document
 * "train_activities": same as test_activities, but for train, with 7352 rows.
 * "train_set": same as test_set, but for train, with 7352 rows.
 
-## Step 1: merging test and train
+### Step 1: merging test and train
 * "test_complete": column binding of "subject_test", "test_activities" and "test_set". It hence has 1 + 1 + 561 = 563 columns and 2947 rows.
 * "train_complete": same as "test_complete", having 563 columns and 7352 rows.
 * "observations" unifies "test_complete" and "train_complete" in a sole data frame, which hence will have 2947 + 7352 = 10299 rows and 563 columns. We don't need to keep the type of observation (test or train) as we are not asked to give any information on it later.
 We give to observations columns the names of the features, and for the two first columns the names "subject" and "activity"
 
-# Step 2: extracting measurements on the mean and standard deviation
+### Step 2: extracting measurements on the mean and standard deviation
 * "col_mean_std" is a vector with the observations names, but only those containing "mean" or "std". "observations_mean_std" is the data frame whose names are "col_mean_std"
-* "col_mean_std_notFreq"  is a vector with the previous names whithout the sequence "Freq", and the data frame with those names. It has 10299 observations and 68 variables.
+* "col_mean_std_notFreq"  is a vector with the previous names whithout the sequence "Freq", and the data frame with those names. It has 10299 observations and 69 variables.
 
-# Step 3: descriptive activity names in the data set
-* "observations_activities" is the previous file, but replacing the activity codes by the activity labels.  It still has 10299 observations and 68 variables.
+### Step 3: descriptive activity names in the data set
+* "observations_activities" is the previous file, but replacing the activity codes by the activity labels.  It still has 10299 observations and 69 variables.
 
-# Step 4: descriptive variable names
+### Step 4: descriptive variable names
 * "observations_activities" will be transformed, but maintaining the same name, to simplify to variable names.
 
-# Step 5: average of each variable for activity and subject
-* "summarised_data" is a data frame with 180 rows, corresponding to each possible combination of subjects (1 to 30) and feature (1 to 66). Each cell will represent the mean of the feature for that subject on that activity.
+### Step 5: average of each variable for activity and subject
+* "summarised_data" is a data frame with 180 rows, corresponding to each possible combination of subjects (1 to 30) and feature (1 to 67). Each cell will represent the mean of the feature for that subject on that activity.
 
 * Finally, "summarised_data.txt" is the exported file that has been uploaded to github.
