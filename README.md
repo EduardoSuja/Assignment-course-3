@@ -6,29 +6,26 @@ date: "10 de julio de 2016"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## How the script works.
 
 ### Before following the steps, we need lo load the data
-* activities, which has no header, and to whom we add the column names "activity_code" and "activity_label")
+* activities, with no header, and to whom we add the column names "activity_code" and "activity_label")
 We obtain a data frame with 6 observations of  2 variables
-* features, which has no header, and to whom we add the column names "feature_code" and "feature_label".
+* features, with no header, and to whom we add the column names "feature_code" and "feature_label".
 We obtain a data frame with 561 observations and 2 variable.
 
 * test data
         - subject_test, with the subject code for each observation
         - test_activities, with activity code for each observation
         - test_set, with all the obervations for the test
-        We obtain thre data frames with 2947 observations each one, 1 variable for subject and activities, and 561 variables for the set. It is important to notice that 561 corresponds with the number of observations in features data frame.
+        We obtain three data frames with 2947 observations each one, 1 variable for subject and 1 for activities, and 561 variables for the set. It is important to notice that 561 corresponds with the number of observations in features data frame.
 
 * train data
         - same structure as for test
-        - We obtain thre data frames with 7352 observations each one, 1 variable for subject and activities, and 561 variables for the set. Again, we  notice that 561 corresponds with the number of observations in features data frame.
+        - We obtain three data frames with 7352 observations each one, 1 variable for subject and 1 for activities, and 561 variables for the set. Again, we  notice that 561 corresponds with the number of observations in features data frame.
 
-To provide the information we are asked for in this asignment, we don`t need to load the inertial folder.
+To provide the information we are asked for in this asignment, we don't need to load the inertial folder.
         
 ### Step 1: merging test and train
 Once the data loaded, we can start working on them.
